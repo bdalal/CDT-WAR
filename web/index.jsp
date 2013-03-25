@@ -4,14 +4,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script>
-            function findNext(id,label){
-                alert(id);
-                alert(label);
+            function findNext(id,label){                
                 var xmlhttp=new XMLHttpRequest();
                 xmlhttp.onreadystatechange=function(){
                     if(xmlhttp.readyState===4 && xmlhttp.status===200)
                         {
-                            alert("Inside onReadyStateChange");
                             var res=xmlhttp.responseText;
                             var type=res.substring(0,res.indexOf("///"));
                             res=res.substring(res.indexOf("///")+3);
