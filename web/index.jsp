@@ -5,26 +5,50 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script>
             function findNext(id,label){
+                alert(id);
+                alert(label);
                 var xmlhttp=new XMLHttpRequest();
                 xmlhttp.onreadystatechange=function(){
                     if(xmlhttp.readyState===4 && xmlhttp.status===200)
                         {
-                            var type=xmlhttp.responseText;
+                            alert("Inside onReadyStateChange");
+                            var res=xmlhttp.responseText;
+                            var type=res.substring(0,res.indexOf("///"));
+                            res=res.substring(res.indexOf("///")+3);
+                            if(type==="Problem"){
+                               var prob=res.substring(0, res.indexOf("///"));
+                               res=res.substring(res.indexOf("///")+3);
+                               var pdesc=res.substring(0, res.indexOf("///"));
+                               res=res.substring(res.indexOf("///")+3);
+                               var pid=res.substring(0, res.indexOf("///"));
+                               res=res.substring(res.indexOf("///")+3);
+                               var yesL=res.substring(0, res.indexOf("///"));
+                               res=res.substring(res.indexOf("///")+3);
+                               var noL=res;
+                               document.getElementById("prob").innerHTML=prob;
+                               document.getElementById("pdesc").innerHTML=pdesc;
+                               document.getElementById("buttons").innerHTML="<input type=\"button\" value=\"Yes\" onclick=\"findNext("+pid+","+yesL+");\"/><input type=\"button\" value=\"No\" onclick=\"findNext("+pid+","+noL+");\"/>";
+                            }
+                            else if(type==="Solution"){
+                                var soln=res;
+                                document.getElementById("prob").innerHTML="";
+                                document.getElementById("pdesc").innerHTML=soln;
+                                document.getElementById("buttons").innerHTML="<a href=\"\">Home</a>";
+                                }
+                            /*var type=xmlhttp.responseText;
                             if(type==="Problem"){
                             var pid=xmlhttp.responseText;
                             var prob=xmlhttp.responseText;
                             var pdesc=xmlhttp.responseText;
                             var yesL=xmlhttp.responseText;
                             var noL=xmlhttp.responseText;
-                            document.getElementById("prob").innerHTML=prob;
-                            document.getElementById("pdesc").innerHTML=pdesc;
-                            document.getElementById("buttons").innerHTML="<input type=\"button\" value=\"Yes\" onclick=\"findNext("+pid+","+yesL+");\"/><input type=\"button\" value=\"No\" onclick=\"findNext("+pid+","+noL+");\"/>";
+                            
                             }
                             else if(type==="Solution"){
                                 var soln=xmlhttp.responeText;
                                 document.getElementById("pdesc").innerHTML=soln;
                                 document.getElementById("buttons").innerHTML="";
-                            }
+                            }*/
                         }                        
                 };
                 xmlhttp.open("POST","Servlet1",true);
