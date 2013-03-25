@@ -17,20 +17,20 @@
                             res=res.substring(res.indexOf("///")+3);
                             if(type==="Problem"){
                                var prob=res.substring(0, res.indexOf("///"));
-                               res=res.substring(res.indexOf("///")+3);
+                               res=res.substring(res.indexOf("///")+3);                               
                                var pdesc=res.substring(0, res.indexOf("///"));
-                               res=res.substring(res.indexOf("///")+3);
+                               res=res.substring(res.indexOf("///")+3);                               
                                var pid=res.substring(0, res.indexOf("///"));
-                               res=res.substring(res.indexOf("///")+3);
+                               res=res.substring(res.indexOf("///")+3);                               
                                var yesL=res.substring(0, res.indexOf("///"));
-                               res=res.substring(res.indexOf("///")+3);
-                               var noL=res;
+                               res=res.substring(res.indexOf("///")+3);                               
+                               var noL=res;                               
                                document.getElementById("prob").innerHTML=prob;
                                document.getElementById("pdesc").innerHTML=pdesc;
                                document.getElementById("buttons").innerHTML="<input type=\"button\" value=\"Yes\" onclick=\"findNext("+pid+","+yesL+");\"/><input type=\"button\" value=\"No\" onclick=\"findNext("+pid+","+noL+");\"/>";
                             }
                             else if(type==="Solution"){
-                                var soln=res.substring(0,res.indexOf("///end"));
+                                var soln=res;
                                 document.getElementById("prob").innerHTML="";
                                 document.getElementById("pdesc").innerHTML=soln;
                                 document.getElementById("buttons").innerHTML="<a href=\"\">Home</a>";
