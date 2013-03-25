@@ -9,6 +9,8 @@
                 xmlhttp.onreadystatechange=function(){
                     if(xmlhttp.readyState===4 && xmlhttp.status===200)
                         {
+                            var type=xmlhttp.responseText;
+                            if(type==="Problem"){
                             var pid=xmlhttp.responseText;
                             var prob=xmlhttp.responseText;
                             var pdesc=xmlhttp.responseText;
@@ -17,6 +19,12 @@
                             document.getElementById("prob").innerHTML=prob;
                             document.getElementById("pdesc").innerHTML=pdesc;
                             document.getElementById("buttons").innerHTML="<input type=\"button\" value=\"Yes\" onclick=\"findNext("+pid+","+yesL+");\"/><input type=\"button\" value=\"No\" onclick=\"findNext("+pid+","+noL+");\"/>";
+                            }
+                            else if(type==="Solution"){
+                                var soln=xmlhttp.responeText;
+                                document.getElementById("pdesc").innerHTML=soln;
+                                document.getElementById("buttons").innerHTML="";
+                            }
                         }                        
                 };
                 xmlhttp.open("POST","Servlet1",true);
