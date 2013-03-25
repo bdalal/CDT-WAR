@@ -40,7 +40,7 @@ public class Servlet1 extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {
-            String pid,label,res,prob,pdesc,yesL,noL;
+            String pid,label,res="";
             @SuppressWarnings("UnusedAssignment")
             float current,next;
             
@@ -51,14 +51,13 @@ public class Servlet1 extends HttpServlet {
             next=Float.parseFloat(label);
             
             res=obj.findNext(current,next).toString();
-            if(res.indexOf("///end")!=-1){
+            if(res.indexOf("///end")!=-1){                
                 out.write("Solution///"+res.substring(0,res.indexOf("///end")));
                 }
             else if(res.indexOf("///end")==-1){
                 out.write("Problem///"+res);                
             }
-            out.write(res);
-            
+                        
         }
         catch(Exception e){
             e.printStackTrace();
