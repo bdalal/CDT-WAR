@@ -52,13 +52,13 @@ public class Servlet1 extends HttpServlet {
             
             res=obj.findNext(current,next).toString();
             if(res.indexOf("///end")!=-1){
-                out.write("Solution");
-                res=res.substring(0,res.indexOf("///end"));
-                out.write(res);
+                out.write("Solution///"+res.substring(0,res.indexOf("///end")));
+                //res=res.substring(0,res.indexOf("///end"));
+                //out.write(res);
             }
             else if(res.indexOf("///end")==-1){
-                out.write("Problem");
-                prob=res.substring(0, res.indexOf("///"));
+                out.write("Problem///"+res);
+                /*prob=res.substring(0, res.indexOf("///"));
                 res=res.substring(res.indexOf("///")+3);
                 pdesc=res.substring(0, res.indexOf("///"));
                 res=res.substring(res.indexOf("///")+3);
@@ -72,7 +72,7 @@ public class Servlet1 extends HttpServlet {
                 out.write(prob);
                 out.write(pdesc);
                 out.write(yesL);
-                out.write(noL);
+                out.write(noL);*/
             }
             out.write(res);
             
