@@ -30,26 +30,12 @@
                                document.getElementById("buttons").innerHTML="<input type=\"button\" value=\"Yes\" onclick=\"findNext("+pid+","+yesL+");\"/><input type=\"button\" value=\"No\" onclick=\"findNext("+pid+","+noL+");\"/>";
                             }
                             else if(type==="Solution"){
-                                var soln=res;
+                                var soln=res.substring(0,res.indexOf("///end"));
                                 document.getElementById("prob").innerHTML="";
                                 document.getElementById("pdesc").innerHTML=soln;
                                 document.getElementById("buttons").innerHTML="<a href=\"\">Home</a>";
-                                }
-                            /*var type=xmlhttp.responseText;
-                            if(type==="Problem"){
-                            var pid=xmlhttp.responseText;
-                            var prob=xmlhttp.responseText;
-                            var pdesc=xmlhttp.responseText;
-                            var yesL=xmlhttp.responseText;
-                            var noL=xmlhttp.responseText;
-                            
-                            }
-                            else if(type==="Solution"){
-                                var soln=xmlhttp.responeText;
-                                document.getElementById("pdesc").innerHTML=soln;
-                                document.getElementById("buttons").innerHTML="";
-                            }*/
-                        }                        
+                                }                                                        
+                        }
                 };
                 xmlhttp.open("POST","Servlet1",true);
                 xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
