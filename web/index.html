@@ -1,0 +1,167 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style type="text/css">
+div#container
+{
+ 
+   width: 800px;
+   height: 600px;
+   margin-top: 0px;
+   margin-left: 0px;
+   text-align: left;
+}
+</style>
+<style type="text/css">
+a:hover
+{
+   color: #000000;
+}
+</style>
+    <script type="text/javascript" src="./jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="prototype.js"></script>
+<script type="text/javascript" src="scriptaculous.js?load=effects"></script>
+<script type="text/javascript" src="lightbox.js"></script>
+<link rel="stylesheet" href="lightbox.css" type="text/css" media="screen" />
+<style type="text/css">
+   
+    
+    #bv_Text1
+    {
+        font-family: "Showcard Gothic";
+            font-size: 64px;
+    }
+    #bv_Text2
+    {
+       font-size:21px;
+       font-family: "Ravie";    
+     
+    }
+    #bv_LightBox1
+    {
+        border-color: #FFFFFF;
+        border-bottom-style: solid;
+    }
+#TabMenu1
+{
+   float: left;
+   width: 100%;
+   font-family: "Arial Rounded MT Bold";
+   font-size: 13px;
+   line-height: normal;
+   border-bottom: 1px solid #AFABA8;
+}
+#TabMenu1 ul
+{
+   margin: 0;
+   padding: 20px 0px 3px 14px;
+   list-style: none;
+}
+#TabMenu1 li
+{
+   display: inline;
+   margin: 0;
+   padding: 0;
+}
+#TabMenu1 a
+{
+   float: left;
+   background: url("images/style04left.gif") no-repeat left top;
+   margin: 0;
+   padding: 0 0 0 4px;
+   text-decoration: none;
+}
+#TabMenu1 a span
+{
+   float: none;
+   display: block;
+   background: url("images/style04right.gif") no-repeat right top;
+   padding: 5px 15px 4px 6px;
+   color: #000000;
+   font-weight: bold;
+   text-decoration: none;
+}
+#TabMenu1 a:hover span
+{
+   background-position: 100% -42px;
+   color: #000000;
+   font-weight: bold;
+   font-style: normal;
+   text-decoration: none;
+}
+#TabMenu1 a:hover
+{
+   background-position: 0% -42px;
+}
+#TabMenu1 #active a
+{
+   background-position: 0% -84px;
+}
+#TabMenu1 #active a span
+{
+   background-position: 100% -84px;
+   color: #000000;
+   font-weight: bold;
+   text-decoration: none;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function()
+{
+   $("#TabMenu1 .navbar a").hover(function()
+   {
+      $(this).children("span").hide();
+   }, function()
+   {
+      $(this).children("span").show();
+   });
+});
+</script>
+
+<!--[if lt IE 7]>
+<style type="text/css">
+   img { behavior: url("pngfix.htc"); }
+</style>
+<![endif]-->
+</head>
+<body>
+<div id="container">
+<div id="bv_Text1" style="margin:0;padding:0;position:absolute;left:170px;top:38px;width:528px;height:79px;text-align:left;z-index:0;">
+C&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; D&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; T</div>
+<div id="bv_Text2" style="margin:0;padding:0;position:absolute;left:208px;top:110px;width:552px;height:30px;text-align:left;z-index:1;">
+Computer&nbsp;&nbsp; &nbsp;&nbsp; Diagnostic&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Tool</div>
+  <!--<input type="button" value="Start Troubleshooting Now" ondblclick="http://troubleshooting.html">-->
+
+</div>
+    
+<div id="bv_LightBox1" style="margin:0;padding:0;position:absolute;left:180px;top:160px;width:340px;height:288px;text-align:left;z-index:3;">
+<table >
+    <tr><td>
+<a href="http://localhost:8080/CDT-war/" target="_self">Start Troubleshooting Now !!!</a>            
+        </td>
+      <td >
+      <table>
+         <tr>
+            <td><a href="mb.jpeg" rel="lightbox" title="download1"><img alt="motherboard" title="download1" src="mb.jpeg" width="464" height="466"></a></td>
+         </tr>
+      </table>
+      </td>
+   </tr>
+</table>
+</div>
+<div id="bv_TabMenu1" style="margin:0;padding:0;position:absolute;left:0px;top:148px;width:960px;height:72px;text-align:left;z-index:4;">
+<div id="TabMenu1">
+<ul>
+<li><a href="./about.html" target="_self"><span>About Us</span></a></li>
+<li id="active"><a href="./index.html" target="_self"><span>Home</span></a></li>
+<li><a href="./contact.html" target="_self"><span>Contact Us</span></a></li>
+</ul>
+</div></div>
+</body>
+</html>

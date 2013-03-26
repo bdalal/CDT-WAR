@@ -84,8 +84,8 @@
         </jsp:declaration>
         
         <!--STYLE THESE 2 <P> STATEMENTS-->
-        <p id="prob"><%=prob%></p>
-        <p id="pdesc"><%=pdesc%></p>
+        <p id="prob" style="position:absolute;left:240px;top:48px;width:425px;height:70px;text-align:center;"><%=prob%></p>
+        <p id="pdesc" style="position:absolute;left:150px;top:88px;width:725px;height:470px;text-align:center;"><%=pdesc%></p>
         <form><p id="buttons">
                <input type="button" value="Yes" onclick="findNext(<%=pid%>,<%=yesL%>);"/>
                <input type="button" value="No" onclick="findNext(<%=pid%>,<%=noL%>);"/>
