@@ -30,7 +30,7 @@
                                 var soln=res;
                                 document.getElementById("prob").innerHTML="";
                                 document.getElementById("pdesc").innerHTML=soln;
-                                document.getElementById("buttons").innerHTML="<a href=\"\">Home</a>";
+                                document.getElementById("buttons").innerHTML="<a href=\"index.html\" style=\"position:absolute;left:400px;top:300px;text-align:center;\">Home</a>";
                                 }                                                        
                         }
                 };
