@@ -24,7 +24,7 @@
                                var noL=res;                               
                                document.getElementById("prob").innerHTML=prob;
                                document.getElementById("pdesc").innerHTML=pdesc;
-                               document.getElementById("buttons").innerHTML="<input type=\"button\" value=\"Yes\" onclick=\"findNext("+pid+","+yesL+");\"/><input type=\"button\" value=\"No\" onclick=\"findNext("+pid+","+noL+");\"/>";
+                               document.getElementById("buttons").innerHTML="<input type=\"button\" style=\"position:absolute;left:400px;top:300px;text-align:center;\" value=\"Yes\" onclick=\"findNext("+pid+","+yesL+");\"/><input type=\"button\" style=\"position:absolute;left:450px;top:300px;text-align:center;\" value=\"No\" onclick=\"findNext("+pid+","+noL+");\"/>";
                             }
                             else if(type==="Solution"){
                                 var soln=res;
@@ -87,8 +87,8 @@
         <p id="prob" style="position:absolute;left:240px;top:48px;width:425px;height:70px;text-align:center;"><%=prob%></p>
         <p id="pdesc" style="position:absolute;left:150px;top:88px;width:725px;height:470px;text-align:center;"><%=pdesc%></p>
         <form><p id="buttons">
-               <input type="button" style="position:absolute;left:400px;top:468px;text-align:center;" value="Yes" onclick="findNext(<%=pid%>,<%=yesL%>);"/>
-               <input type="button" style="position:absolute;left:450px;top:468px;text-align:center;" value="No" onclick="findNext(<%=pid%>,<%=noL%>);"/>
+               <input type="button" style="position:absolute;left:400px;top:300px;text-align:center;" value="Yes" onclick="findNext(<%=pid%>,<%=yesL%>);"/>
+               <input type="button" style="position:absolute;left:450px;top:300px;text-align:center;" value="No" onclick="findNext(<%=pid%>,<%=noL%>);"/>
             </p></form>
     </body>
 </html>
